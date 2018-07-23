@@ -22,7 +22,9 @@ namespace Pong2.Content
         int controller;
         int direction_;
         int speed_=200;
-        int speed_ai = 100;
+        Hitbox hitBox;
+        int speed_ai = 200;
+        
         public Vector2 Position{
             get 
             {
@@ -34,10 +36,12 @@ namespace Pong2.Content
             }
         }
 
+        public Hitbox HitBox {
+            get { return hitBox;}
+        } 
+
         //hardcoded size
-        public Vector2 Size {
-            get { return new Vector2(25, 100); }
-        }
+        public Vector2 Size { get; } = new Vector2(25, 100);
 
         public int Speed {
             get {
@@ -59,6 +63,7 @@ namespace Pong2.Content
             this.game = game;
             this.position_ = position;
             this.controller = player;
+            hitBox = new Hitbox(Size, position);
         }
         
 
@@ -71,6 +76,7 @@ namespace Pong2.Content
             Keys[] pressedKeys = (from k in Keyboard.GetState().GetPressedKeys()
                                   where validKeys.Contains(k)
                                   select k).ToArray();
+            hitBox.Position = Position;
             if (controller == 1)
             {
                 if (pressedKeys.Length > 0)

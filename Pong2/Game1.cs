@@ -32,6 +32,7 @@ namespace Pong2
             paddle2 = new Paddle(this, 2,new Vector2(800-50,0));
             ball = new Ball(new Vector2(800/2,380/2),1);
             collisionHandler = new CollisionHandler();
+            
         }
         protected override void Initialize()
         {
@@ -63,8 +64,8 @@ namespace Pong2
             {
                 paddle2.Direction = 1;
             }
-            var ballCollide1 = collisionHandler.collidesMTV(paddle1, ball);
-            var ballCollide2 = collisionHandler.collidesMTV(paddle2, ball);
+            var ballCollide1 = collisionHandler.collidesMTV(paddle1.HitBox, ball.Hit_Box);
+            var ballCollide2 = collisionHandler.collidesMTV(paddle2.HitBox, ball.Hit_Box);
 
             if ((bool)ballCollide1[0])
             {
@@ -89,7 +90,7 @@ namespace Pong2
         }
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
             spriteBatch.Begin();
             spriteBatch.Draw(paddleSprite, paddle1.Position, Color.White);
             spriteBatch.Draw(paddleSprite, paddle2.Position, Color.White);

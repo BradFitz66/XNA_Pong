@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Content\Ball.cs" />
     <Compile Include="Content\CollisionHandler.cs" />
+    <Compile Include="Content\Hitbox.cs" />
     <Compile Include="Content\Paddle.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Program.cs" />

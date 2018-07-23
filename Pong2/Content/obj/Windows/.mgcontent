@@ -4,7 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>c:/users/badfi/source/repos/Pong2/Pong2/Content/Paddle.png</File>
-    <File>c:/users/badfi/source/repos/Pong2/Pong2/Content/Ball.png</File>
+    <File>C:/Users/badfi/source/repos/Pong2/Pong2/Content/Paddle.png</File>
+    <File>C:/Users/badfi/source/repos/Pong2/Pong2/Content/Ball.png</File>
   </SourceFiles>
 </SourceFileCollection>

@@ -19,12 +19,12 @@ namespace Pong2.Content
         }
 
         
-        public object[] collidesMTV(Paddle gui1, Ball gui2)
+        public object[] collidesMTV(Hitbox hitBox1, Hitbox hitBox2)
         {
-            Vector2 g1p = gui1.Position;
-            Vector2 g1s = gui1.Size;
-            Vector2 g2p = gui2.Position;
-            Vector2 g2s = gui2.Size;
+            Vector2 g1p = hitBox1.Position;
+            Vector2 g1s = hitBox1.Size;
+            Vector2 g2p = hitBox2.Position;
+            Vector2 g2s = hitBox2.Size;
 
             bool doesCollide = CheckCollision(g1p.X,g1p.Y,g1s.X,g1s.Y,g2p.X,g2p.Y,g2s.X,g2s.Y);
             Vector2 mtv = new Vector2(0,0);
